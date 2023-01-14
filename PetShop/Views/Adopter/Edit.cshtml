@@ -1,0 +1,57 @@
+﻿@model PetShop.Model.Models.Adopter
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Adopter</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AdopterID" />
+            <div class="form-group">
+                <label asp-for="AdopterName" class="control-label"></label>
+                <input asp-for="AdopterName" class="form-control" />
+                <span asp-validation-for="AdopterName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdopterAge" class="control-label"></label>
+                <input asp-for="AdopterAge" class="form-control" />
+                <span asp-validation-for="AdopterAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdopterAdress" class="control-label"></label>
+                <input asp-for="AdopterAdress" class="form-control" />
+                <span asp-validation-for="AdopterAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdopterPhone" class="control-label"></label>
+                <input asp-for="AdopterPhone" class="form-control" />
+                <span asp-validation-for="AdopterPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceID" class="control-label"></label>
+                <input asp-for="ServiceID" class="form-control" />
+                <span asp-validation-for="ServiceID" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="ServiceID" class="control-label"></label>
+                <select asp-for="ServiceID" class="form-control" asp-items="ViewBag.ServiceID"></select>
+                <span asp-validation-for="ServiceID" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PetShop.Model.Models.Service>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    table, th, td {
+        border: 1px solid black !important;
+        border-collapse: collapse !important;
+    }
+
+    th {
+        text-align: left;
+    }
+</style>
+<p>
+    <a asp-action="Create" class="btn btn-danger">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServicePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceDescription)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-danger" asp-route-id="@item.ServiceID">Edit</a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.ServiceID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
